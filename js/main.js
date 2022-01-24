@@ -45,6 +45,40 @@ for(let i = 0; i<modal.length;i++){
     })
 }
 
+const hamburgerButton = document.querySelector(".hamburger-nav-button")
+const hamburgerBackground = document.querySelector(".hamburger-nav-background")
+const hamburgerNav = document.querySelector(".hamburger-nav")
 
+let counter = 0;
+
+
+hamburgerButton.addEventListener("click",()=>{
+    body.classList.toggle("scrollock")
+    if(counter == 0){
+        hamburgerNav.classList.remove("hidehamburgernav");
+        hamburgerNav.classList.add("showhamburgernav");
+        hamburgerBackground.classList.toggle("showhamburgerbackground")
+        counter = 1;
+    }
+
+    else if(counter == 1){
+        hamburgerNav.classList.remove("showhamburgernav");
+        hamburgerNav.classList.add("hidehamburgernav");
+        hamburgerBackground.classList.toggle("showhamburgerbackground")
+        counter = 0;
+    }
+})
+
+const hamburgerLink = document.querySelectorAll(".hamburgerlink");
+for(let i = 0; i<hamburgerLink.length; i++){
+    hamburgerLink[i].addEventListener("click",()=>{
+        hamburgerBackground.classList.remove("showhamburgerbackground");
+        hamburgerNav.classList.remove("showhamburgernav");
+        hamburgerNav.classList.add("hidehamburgernav");
+        body.classList.remove("scrollock")
+        counter = 0;
+
+    })
+}
 
 
