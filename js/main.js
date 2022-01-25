@@ -1,4 +1,3 @@
-
 const project = document.querySelectorAll(".project");
 const projectButtons = document.querySelectorAll(".project-buttons");
 
@@ -49,23 +48,27 @@ const hamburgerButton = document.querySelector(".hamburger-nav-button")
 const hamburgerBackground = document.querySelector(".hamburger-nav-background")
 const hamburgerNav = document.querySelector(".hamburger-nav")
 
-let counter = 0;
+let open = false;
 
 
 hamburgerButton.addEventListener("click",()=>{
     body.classList.toggle("scrollock")
-    if(counter == 0){
+    if(open == false){
         hamburgerNav.classList.remove("hidehamburgernav");
         hamburgerNav.classList.add("showhamburgernav");
         hamburgerBackground.classList.toggle("showhamburgerbackground")
-        counter = 1;
+
+        hamburgerButton.classList.toggle("open");
+        open = true;
     }
 
-    else if(counter == 1){
+    else if(open == 1){
         hamburgerNav.classList.remove("showhamburgernav");
         hamburgerNav.classList.add("hidehamburgernav");
         hamburgerBackground.classList.toggle("showhamburgerbackground")
-        counter = 0;
+
+        hamburgerButton.classList.toggle("open");
+        open = false;
     }
 })
 
@@ -76,9 +79,35 @@ for(let i = 0; i<hamburgerLink.length; i++){
         hamburgerNav.classList.remove("showhamburgernav");
         hamburgerNav.classList.add("hidehamburgernav");
         body.classList.remove("scrollock")
-        counter = 0;
+
+        hamburgerButton.classList.toggle("open");
+        open = false;
 
     })
 }
+
+const nav = document.querySelectorAll(".nav a");
+const navBackground = document.querySelectorAll(".nav span");
+const hamburgerSpan = document.querySelector(".hamburger-nav-button span");
+
+
+for(let i = 0; i<nav.length; i++){
+    nav[i].addEventListener("mouseover",()=>{
+        navBackground[i].classList.remove("navoff")
+        navBackground[i].classList.add("navon")
+    })
+    nav[i].addEventListener("mouseout",()=>{
+        navBackground[i].classList.remove("navon")
+        navBackground[i].classList.add("navoff")
+    })
+}
+hamburgerButton.addEventListener("mouseover",()=>{
+    hamburgerSpan.classList.remove("navoff")
+    hamburgerSpan.classList.add("navon")
+})
+hamburgerButton.addEventListener("mouseout",()=>{
+    hamburgerSpan.classList.remove("navon")
+    hamburgerSpan.classList.add("navoff")
+})
 
 
