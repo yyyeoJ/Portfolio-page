@@ -2,6 +2,7 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 body{
     font-family: 'Oswald', sans-serif;
@@ -17,12 +18,12 @@ p{
 .header{
     width:100%;
     height:3vw;
-    background-color: maroon;
+    background-color: #8b1b2a;
     display:flex;
     align-items: center;
     justify-content: center;
     gap:65vw;
-    position: relative;
+    position: fixed;
     z-index:100;
     
 }
@@ -64,7 +65,7 @@ p{
 
 .nav span{
     position: absolute;
-    background-color:#04480F;
+    background-color:#017c3d;
     text-shadow: none;
     color:rgba(255, 0, 0, 0);
     width:100%;
@@ -142,7 +143,7 @@ a, a:link,a:visited,a:active{
     flex-direction: column;
     font-size:5vw;
     position: absolute;
-    background-color:maroon;
+    background-color:#8b1b2a;
     width:100%;
     height:50vw;
     top:7vw;
@@ -173,6 +174,7 @@ a, a:link,a:visited,a:active{
     z-index:0;
     transition: 0.1s ease-in-out;
 }
+
 .showhamburgerbackground{
     opacity:100 !important;
     z-index:2;
@@ -251,10 +253,17 @@ hr{
 }
 .contact-me{
     display:flex;
+    z-index:3;
     flex-direction: column;
     gap:1vw;
     align-items: center;
     width:100%;
+}
+.zindex{
+    z-index:0;
+}
+.headerzindex{
+    z-index:2;
 }
 .contacts{
     display:flex;
@@ -375,20 +384,19 @@ hr{
 
 }
 @keyframes shadowon{
-    0%{box-shadow: inset 0px 0px 46px 0px rgba(0,0,0,0.82);}
-    20%{box-shadow: inset 0px 0px 46px 7px rgba(0,0,0,0.82);}
-    40%{box-shadow: inset 0px 0px 46px 14px rgba(0,0,0,0.82);}
-    60%{box-shadow: inset 0px 0px 46px 21px rgba(0,0,0,0.82);}
-    80%{box-shadow: inset 0px 0px 46px 28px rgba(0,0,0,0.82);}
-    100%{box-shadow: inset 0px 0px 46px 35px rgba(0,0,0,0.82);}
+    0%{box-shadow: inset 0px 0px 46px 0px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
+    20%{box-shadow: inset 0px 0px 46px 7px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
+    40%{box-shadow: inset 0px 0px 46px 14px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
+    60%{box-shadow: inset 0px 0px 46px 21px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
+    80%{box-shadow: inset 0px 0px 46px 28px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
+    100%{box-shadow: inset 0px 0px 46px 35px rgba(0,0,0,0.82),0px 0px 13px 1px #000000;}
 }
 @keyframes shadowoff{
-    0%{box-shadow: inset 0px 0px 46px 35px rgba(0,0,0,0.82);}
-    20%{box-shadow: inset 0px 0px 46px 28px rgba(0,0,0,0.82);}
-    40%{box-shadow: inset 0px 0px 46px 21px rgba(0,0,0,0.82);}
-    60%{box-shadow: inset 0px 0px 46px 14px rgba(0,0,0,0.82);}
-    80%{box-shadow: inset 0px 0px 46px 7px rgba(0,0,0,0.82);}
-    100%{box-shadow: inset 0px 0px 46px 0px rgba(0,0,0,0.82);}
+    0%{box-shadow: inset 0px 0px 46px 35px rgba(0,0,0,0.82), 0px 0px 13px 1px #000000;}
+    20%{box-shadow: inset 0px 0px 46px 28px rgba(0,0,0,0.82), 0px 0px 13px 1px #000000;}
+    40%{box-shadow: inset 0px 0px 46px 21px rgba(0,0,0,0.82), 0px 0px 13px 1px #000000;}
+    60%{box-shadow: inset 0px 0px 46px 14px rgba(0,0,0,0.82), 0px 0px 13px 1px #000000;}
+    80%{box-shadow: inset 0px 0px 46px 7px rgba(0,0,0,0.82), 0px 0px 13px 1px #000000;}
 }
 
 
@@ -579,7 +587,7 @@ hr{
     font-family: 'Inconsolata', monospace;
     width:100%;
     height:3vw;
-    background-color: #04480F;
+    background-color: #017c3d;
     color:white;
     display:flex;
     align-items: center;

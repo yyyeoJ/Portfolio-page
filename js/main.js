@@ -26,7 +26,7 @@ const modal = document.querySelectorAll(".modal-background");
 const modalCard = document.querySelectorAll(".modal");
 const viewProjectButton = document.querySelectorAll(".viewproject");
 const exitButton = document.querySelectorAll(".exit")
-
+const header = document.querySelector(".header")
 
 for(let i = 0; i<modal.length;i++){
         viewProjectButton[i].addEventListener("click",()=>{
@@ -34,6 +34,7 @@ for(let i = 0; i<modal.length;i++){
         modal[i].classList.add("showmodal")
         modalCard[i].classList.add("showmodal-popup")
         body.classList.add("scrollock")
+        header.classList.toggle("headerzindex")
     })
     
     exitButton[i].addEventListener("click",()=>{
@@ -41,6 +42,7 @@ for(let i = 0; i<modal.length;i++){
         modalCard[i].classList.remove("showmodal-popup")
         modalCard[i].classList.add("showmodal-popout")
         body.classList.remove("scrollock")
+        header.classList.toggle("headerzindex")
     })
 }
 
@@ -53,6 +55,7 @@ let open = false;
 
 hamburgerButton.addEventListener("click",()=>{
     body.classList.toggle("scrollock")
+    contactMe.classList.toggle("zindex")
     if(open == false){
         hamburgerNav.classList.remove("hidehamburgernav");
         hamburgerNav.classList.add("showhamburgernav");
@@ -72,6 +75,7 @@ hamburgerButton.addEventListener("click",()=>{
     }
 })
 
+const contactMe = document.querySelector(".contact-me")
 const hamburgerLink = document.querySelectorAll(".hamburgerlink");
 for(let i = 0; i<hamburgerLink.length; i++){
     hamburgerLink[i].addEventListener("click",()=>{
